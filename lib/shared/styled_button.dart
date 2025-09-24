@@ -12,14 +12,14 @@ class StyledButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         decoration: BoxDecoration(
           gradient: RadialGradient(
-            colors: [AppColors.primaryColor, AppColors.secondaryAccent],
-            center: Alignment(-0.1, -0.7),
+            colors: [AppColors.primaryColor, AppColors.primaryAccent],
+            center: const Alignment(-0.1, -0.7),
             radius: 1.9,
           ),
-          borderRadius: BorderRadius.all(Radius.circular(5)),
+          borderRadius: const BorderRadius.all(Radius.circular(5)),
         ),
         child: child,
       ),
