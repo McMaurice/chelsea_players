@@ -1,26 +1,28 @@
 import 'package:chelsea_players/models/character.dart';
 import 'package:chelsea_players/models/vocation.dart';
 import 'package:chelsea_players/screens/create/vocation_card.dart';
+import 'package:chelsea_players/services/character_store.dart';
 import 'package:chelsea_players/shared/styled_button.dart';
 import 'package:chelsea_players/shared/styled_text.dart';
 import 'package:chelsea_players/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 
 var uuid = const Uuid();
 
-class Create extends StatefulWidget {
-  const Create({super.key});
+class CreateScreen extends StatefulWidget {
+  const CreateScreen({super.key});
 
   @override
-  State<Create> createState() => _CreateState();
+  State<CreateScreen> createState() => _CreateScreenState();
 }
 
-class _CreateState extends State<Create> {
+class _CreateScreenState extends State<CreateScreen> {
   final _nameController = TextEditingController();
   final _sloganController = TextEditingController();
-
+  
   // Handling selections
   Vocation selectedVocation = Vocation.junkie;
 
@@ -87,7 +89,7 @@ class _CreateState extends State<Create> {
       return;
     }
 
-    character.add(
+    Provider.of<CharacterStore>(context, listen: false).addCharacter(
       Character(
         name: _nameController.text.trim(),
         slogan: _sloganController.text.trim(),
@@ -95,6 +97,7 @@ class _CreateState extends State<Create> {
         id: uuid.v4(),
       ),
     );
+    Navigator.pop(context);
   }
 
   @override

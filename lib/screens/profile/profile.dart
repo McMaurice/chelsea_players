@@ -1,5 +1,7 @@
 import 'package:chelsea_players/models/character.dart';
+import 'package:chelsea_players/screens/profile/skill_list.dart';
 import 'package:chelsea_players/screens/profile/stats_table.dart';
+import 'package:chelsea_players/shared/styled_button.dart';
 import 'package:chelsea_players/shared/styled_text.dart';
 import 'package:chelsea_players/theme.dart';
 import 'package:flutter/material.dart';
@@ -71,10 +73,27 @@ class Profile extends StatelessWidget {
             // stats and skills
             Container(
               alignment: Alignment.center,
-              child: Column(children: [StatsTable(character)]),
+              child: Column(
+                children: [StatsTable(character), SkillList(character)],
+              ),
             ),
 
             // save button
+            StyledButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: const StyledHeading('Changes has been saved'),
+                    showCloseIcon: true,
+                    duration: const Duration(seconds: 3),
+                    backgroundColor: AppColors.primaryAccent,
+                  ),
+                );
+                Navigator.pop(context);
+              },
+              child: const StyledHeading('Save Changes'),
+            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),

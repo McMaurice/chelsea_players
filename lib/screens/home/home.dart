@@ -1,9 +1,10 @@
-import 'package:chelsea_players/models/character.dart';
 import 'package:chelsea_players/screens/create/create.dart';
+import 'package:chelsea_players/services/character_store.dart';
 import 'package:flutter/material.dart';
 import 'package:chelsea_players/screens/home/character_card.dart';
 import 'package:chelsea_players/shared/styled_button.dart';
 import 'package:chelsea_players/shared/styled_text.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -25,18 +26,22 @@ class _HomeState extends State<Home> {
         child: Column(
           children: [
             Expanded(
-              child: ListView.builder(
-                itemCount: character.length,
-                itemBuilder: (_, player) {
-                  return PlayerCard(character[player]);
-                },
+              child: Consumer<CharacterStore>(
+                builder: (context, value, child) {
+                  return ListView.builder(
+                    itemCount: value.characters.length,
+                    itemBuilder: (_, player) {
+                      return PlayerCard(value.characters[player]);
+                    },
+                  );
+                }
               ),
             ),
             StyledButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (ctx) => const Create()),
+                  MaterialPageRoute(builder: (ctx) => const CreateScreen()),
                 );
               },
               child: const StyledHeading('Add Character'),

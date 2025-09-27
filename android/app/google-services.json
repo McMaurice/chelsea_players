@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "740513596067",
+    "project_id": "flutter-materclass-a87f5",
+    "storage_bucket": "flutter-materclass-a87f5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740513596067:android:bfc852022baa6ae6883516",
+        "android_client_info": {
+          "package_name": "com.example.chelsea_players"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClZVyqp7RX8wxJkmBRpd7yBdTiaZMeTXg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

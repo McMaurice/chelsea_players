@@ -43,9 +43,12 @@ class _StatsTableState extends State<StatsTable> {
             columnWidths: const {
               0: FlexColumnWidth(3), // title takes more space
             },
-            
+
             children: widget.character.statsAsFormattedList.map((stat) {
               return TableRow(
+                decoration: BoxDecoration(
+                  color: AppColors.primaryColor.withAlpha((0.5 * 255).toInt()),
+                ),
                 children: [
                   // stat title
                   TableCell(
@@ -73,7 +76,11 @@ class _StatsTableState extends State<StatsTable> {
                         Icons.arrow_upward,
                         color: AppColors.textColor,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          widget.character.increaseStat(stat['title']!);
+                        });
+                      },
                     ),
                   ),
 
@@ -85,7 +92,11 @@ class _StatsTableState extends State<StatsTable> {
                         Icons.arrow_downward,
                         color: AppColors.textColor,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          widget.character.decreaseStat(stat['title']!);
+                        });
+                      },
                     ),
                   ),
                 ],
