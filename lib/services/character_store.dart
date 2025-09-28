@@ -1,35 +1,9 @@
 import 'package:chelsea_players/models/character.dart';
-import 'package:chelsea_players/models/vocation.dart';
 import 'package:chelsea_players/services/firestore_services.dart';
 import 'package:flutter/material.dart';
 
 class CharacterStore extends ChangeNotifier {
-  final List<Character> _characters = [
-    Character(
-      name: "OZED",
-      slogan: "KaPoff",
-      vocation: Vocation.wizard,
-      id: "1",
-    ),
-    Character(
-      name: "Kenzy",
-      slogan: "Light em up..",
-      vocation: Vocation.junkie,
-      id: "2",
-    ),
-    Character(
-      name: "CeeJay",
-      slogan: "Godspeed",
-      vocation: Vocation.raider,
-      id: "3",
-    ),
-    Character(
-      name: "Snake Eyes",
-      slogan: "Catch me if you can",
-      vocation: Vocation.ninja,
-      id: "4",
-    ),
-  ];
+  final List<Character> _characters = [];
 
   // Getter
   get characters => _characters;
@@ -43,8 +17,28 @@ class CharacterStore extends ChangeNotifier {
   }
 
   // save/update character
+  Future<void> saveCharacter(Character character) async {
+    await FirestoreServices.updateCharacter(character);
+    return;
+  }
 
   // remove characcter
+  Future<void> removeCharacter(Character character) async {
+    await FirestoreServices.deleteCharacter(character);
+
+    _characters.remove(character);
+    notifyListeners();
+  }
 
   // initially fetch characters
+  void fetchCharactersOnce() async {
+    if (characters.length == 0) {
+      final snapshot = await FirestoreServices.getCharactersOnce();
+
+      for (var doc in snapshot.docs) {
+        _characters.add(doc.data());
+      }
+      notifyListeners();
+    }
+  }
 }

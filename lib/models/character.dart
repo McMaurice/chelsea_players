@@ -85,24 +85,4 @@ class Character with Stats {
 }
 
 // Dummy players data
-List<Character> character = [
-  Character(name: "OZED", slogan: "KaPoff", vocation: Vocation.wizard, id: "1"),
-  Character(
-    name: "Kenzy",
-    slogan: "Light em up..",
-    vocation: Vocation.junkie,
-    id: "2",
-  ),
-  Character(
-    name: "CeeJay",
-    slogan: "Godspeed",
-    vocation: Vocation.raider,
-    id: "3",
-  ),
-  Character(
-    name: "Snake Eyes",
-    slogan: "Catch me if you can",
-    vocation: Vocation.ninja,
-    id: "4",
-  ),
-];
+
