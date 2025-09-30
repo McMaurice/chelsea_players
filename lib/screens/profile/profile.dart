@@ -1,4 +1,5 @@
 import 'package:chelsea_players/models/character.dart';
+import 'package:chelsea_players/screens/profile/heart.dart';
 import 'package:chelsea_players/screens/profile/skill_list.dart';
 import 'package:chelsea_players/screens/profile/stats_table.dart';
 import 'package:chelsea_players/services/character_store.dart';
@@ -22,28 +23,39 @@ class Profile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // prifile intro
-            Container(
-              padding: const EdgeInsets.all(16),
-              color: AppColors.primaryColor.withAlpha((0.5 * 255).toInt()),
-              child: Row(
-                children: [
-                  Image.asset(
-                    'assets/img/vocations/${character.vocation.image}',
-                    width: 140,
-                    height: 140,
+            Stack(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  color: AppColors.primaryColor.withAlpha((0.5 * 255).toInt()),
+                  child: Row(
+                    children: [
+                      Hero(
+                        tag: character.id,
+                        child: Image.asset(
+                          'assets/img/vocations/${character.vocation.image}',
+                          width: 140,
+                          height: 140,
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            StyledHeading(character.vocation.title),
+                            StyledText(character.vocation.description),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(width: 20),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        StyledHeading(character.vocation.title),
-                        StyledText(character.vocation.description),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+                ),
+                Positioned(
+                    top: 10,
+                    right: 10,
+                  child: Heart(character: character)),
+              ],
             ),
 
             // weapons ability and slogan
