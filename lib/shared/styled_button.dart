@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:chelsea_players/theme.dart';
+import 'package:game_characters/theme.dart';
 
 class StyledButton extends StatelessWidget {
   const StyledButton({super.key, required this.onPressed, required this.child});

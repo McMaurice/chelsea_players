@@ -1,6 +1,6 @@
-import 'package:chelsea_players/services/character_store.dart';
+import 'package:game_characters/services/character_store.dart';
 import 'package:flutter/material.dart';
-import 'package:chelsea_players/screens/home/home.dart';
+import 'package:game_characters/screens/home/home.dart';
 import 'package:provider/provider.dart';
 import 'theme.dart';
 

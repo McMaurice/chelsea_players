@@ -1,6 +1,6 @@
-import 'package:chelsea_players/models/vocation.dart';
-import 'package:chelsea_players/shared/styled_text.dart';
-import 'package:chelsea_players/theme.dart';
+import 'package:game_characters/models/vocation.dart';
+import 'package:game_characters/shared/styled_text.dart';
+import 'package:game_characters/theme.dart';
 import 'package:flutter/material.dart';
 
 class VocationCard extends StatelessWidget {

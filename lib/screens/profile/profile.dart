@@ -1,11 +1,11 @@
-import 'package:chelsea_players/models/character.dart';
-import 'package:chelsea_players/screens/profile/heart.dart';
-import 'package:chelsea_players/screens/profile/skill_list.dart';
-import 'package:chelsea_players/screens/profile/stats_table.dart';
-import 'package:chelsea_players/services/character_store.dart';
-import 'package:chelsea_players/shared/styled_button.dart';
-import 'package:chelsea_players/shared/styled_text.dart';
-import 'package:chelsea_players/theme.dart';
+import 'package:game_characters/models/character.dart';
+import 'package:game_characters/screens/profile/heart.dart';
+import 'package:game_characters/screens/profile/skill_list.dart';
+import 'package:game_characters/screens/profile/stats_table.dart';
+import 'package:game_characters/services/character_store.dart';
+import 'package:game_characters/shared/styled_button.dart';
+import 'package:game_characters/shared/styled_text.dart';
+import 'package:game_characters/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

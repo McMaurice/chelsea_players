@@ -1,9 +1,9 @@
-import 'package:chelsea_players/screens/create/create.dart';
-import 'package:chelsea_players/services/character_store.dart';
+import 'package:game_characters/screens/create/create.dart';
+import 'package:game_characters/services/character_store.dart';
 import 'package:flutter/material.dart';
-import 'package:chelsea_players/screens/home/character_card.dart';
-import 'package:chelsea_players/shared/styled_button.dart';
-import 'package:chelsea_players/shared/styled_text.dart';
+import 'package:game_characters/screens/home/character_card.dart';
+import 'package:game_characters/shared/styled_button.dart';
+import 'package:game_characters/shared/styled_text.dart';
 import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {

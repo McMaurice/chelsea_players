@@ -1,4 +1,4 @@
-import 'package:chelsea_players/models/character.dart';
+import 'package:game_characters/models/character.dart';
 import 'package:flutter/material.dart';
 
 class Heart extends StatefulWidget {

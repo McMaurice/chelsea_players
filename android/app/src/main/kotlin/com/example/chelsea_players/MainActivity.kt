@@ -1,4 +1,4 @@
-package com.example.chelsea_players
+package com.example.game_characters
 
 import io.flutter.embedding.android.FlutterActivity
 

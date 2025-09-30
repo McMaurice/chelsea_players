@@ -1,6 +1,6 @@
 {
-    "name": "chelsea_players",
-    "short_name": "chelsea_players",
+    "name": "game_characters",
+    "short_name": "game_characters",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

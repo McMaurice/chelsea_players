@@ -1,6 +1,6 @@
-import 'package:chelsea_players/models/character.dart';
-import 'package:chelsea_players/shared/styled_text.dart';
-import 'package:chelsea_players/theme.dart';
+import 'package:game_characters/models/character.dart';
+import 'package:game_characters/shared/styled_text.dart';
+import 'package:game_characters/theme.dart';
 import 'package:flutter/material.dart';
 
 class StatsTable extends StatefulWidget {
@@ -85,7 +85,11 @@ class _StatsTableState extends State<StatsTable> {
                       onPressed: () {
                         setState(() {
                           widget.character.increaseStat(stat['title']!);
-                          turns += 0.5;
+                          if (widget.character.points > 0) {
+                            (turns += 0.5);
+                          } else {
+                            turns = 0.0;
+                          }
                         });
                       },
                     ),
@@ -102,7 +106,9 @@ class _StatsTableState extends State<StatsTable> {
                       onPressed: () {
                         setState(() {
                           widget.character.decreaseStat(stat['title']!);
-                          turns -= 0.5;
+                          if (widget.character.statsAsMap[stat['title']!]! > 5) {
+                            (turns -= 0.5);
+                          }
                         });
                       },
                     ),

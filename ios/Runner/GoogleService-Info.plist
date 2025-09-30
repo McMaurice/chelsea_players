@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.chelseaPlayers</string>
+	<string>com.example.gamecharacters</string>
 	<key>PROJECT_ID</key>
 	<string>flutter-materclass-a87f5</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:740513596067:ios:1bee6b366b8ea300883516</string>
+	<string>1:740513596067:ios:fb06ba0827714a82883516</string>
 </dict>
 </plist>

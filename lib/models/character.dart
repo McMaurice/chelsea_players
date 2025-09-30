@@ -1,6 +1,6 @@
-import 'package:chelsea_players/models/skill.dart';
-import 'package:chelsea_players/models/stats.dart';
-import 'package:chelsea_players/models/vocation.dart';
+import 'package:game_characters/models/skill.dart';
+import 'package:game_characters/models/stats.dart';
+import 'package:game_characters/models/vocation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Character with Stats {

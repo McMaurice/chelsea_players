@@ -1,10 +1,10 @@
-import 'package:chelsea_players/models/character.dart';
-import 'package:chelsea_players/models/vocation.dart';
-import 'package:chelsea_players/screens/create/vocation_card.dart';
-import 'package:chelsea_players/services/character_store.dart';
-import 'package:chelsea_players/shared/styled_button.dart';
-import 'package:chelsea_players/shared/styled_text.dart';
-import 'package:chelsea_players/theme.dart';
+import 'package:game_characters/models/character.dart';
+import 'package:game_characters/models/vocation.dart';
+import 'package:game_characters/screens/create/vocation_card.dart';
+import 'package:game_characters/services/character_store.dart';
+import 'package:game_characters/shared/styled_button.dart';
+import 'package:game_characters/shared/styled_text.dart';
+import 'package:game_characters/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';

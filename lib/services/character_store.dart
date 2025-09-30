@@ -1,5 +1,5 @@
-import 'package:chelsea_players/models/character.dart';
-import 'package:chelsea_players/services/firestore_services.dart';
+import 'package:game_characters/models/character.dart';
+import 'package:game_characters/services/firestore_services.dart';
 import 'package:flutter/material.dart';
 
 class CharacterStore extends ChangeNotifier {

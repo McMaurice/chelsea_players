@@ -1,4 +1,4 @@
-import 'package:chelsea_players/models/character.dart';
+import 'package:game_characters/models/character.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirestoreServices {
@@ -25,7 +25,7 @@ class FirestoreServices {
       'stats': character.statsAsMap,
       'points': character.points,
       'skills': character.skills.map((s) => s.id).toList(),
-      'isFave': character.isFav,
+      'isFav': character.isFav,
     });
   }
 

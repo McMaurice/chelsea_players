@@ -1,7 +1,7 @@
-import 'package:chelsea_players/models/character.dart';
-import 'package:chelsea_players/screens/profile/profile.dart';
-import 'package:chelsea_players/shared/styled_text.dart';
-import 'package:chelsea_players/theme.dart';
+import 'package:game_characters/models/character.dart';
+import 'package:game_characters/screens/profile/profile.dart';
+import 'package:game_characters/shared/styled_text.dart';
+import 'package:game_characters/theme.dart';
 import 'package:flutter/material.dart';
 
 class PlayerCard extends StatelessWidget {
@@ -12,7 +12,6 @@ class PlayerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // makes whole card tappable with ripple
       onTap: () {
         Navigator.push(
           context,
@@ -22,31 +21,44 @@ class PlayerCard extends StatelessWidget {
       child: Card(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-          child: Row(
+          child: Stack(
             children: [
-              Hero(
-                tag: character.id,
-                child: Image.asset(
-                  'assets/img/vocations/${character.vocation.image}',
-                  width: 80,
-                ),
-              ),
-              const SizedBox(width: 20),
-
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              // Main row with image, text, and arrow
+              Row(
                 children: [
-                  StyledHeading(character.name),
-                  StyledText(character.vocation.title),
+                  Hero(
+                    tag: character.id,
+                    child: Image.asset(
+                      'assets/img/vocations/${character.vocation.image}',
+                      width: 80,
+                    ),
+                  ),
+                  const SizedBox(width: 20),
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      StyledHeading(character.name),
+                      StyledText(character.vocation.title),
+                    ],
+                  ),
+
+                  const Expanded(child: SizedBox()),
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    size: 16,
+                    color: AppColors.textColor,
+                  ),
                 ],
               ),
 
-              const Expanded(child: SizedBox()),
-              Icon(
-                Icons.arrow_forward_ios,
-                size: 16,
-                color: AppColors.textColor,
-              ),
+              // Favorite icon at top-right corner
+              if (character.isFav)
+                const Positioned(
+                  top: 30,
+                  right: 60,
+                  child: Icon(Icons.favorite, color: Colors.red),
+                ),
             ],
           ),
         ),

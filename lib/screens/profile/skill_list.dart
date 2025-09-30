@@ -1,7 +1,7 @@
-import 'package:chelsea_players/models/character.dart';
-import 'package:chelsea_players/models/skill.dart';
-import 'package:chelsea_players/shared/styled_text.dart';
-import 'package:chelsea_players/theme.dart';
+import 'package:game_characters/models/character.dart';
+import 'package:game_characters/models/skill.dart';
+import 'package:game_characters/shared/styled_text.dart';
+import 'package:game_characters/theme.dart';
 import 'package:flutter/material.dart';
 
 class SkillList extends StatefulWidget {

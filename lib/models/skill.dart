@@ -1,4 +1,4 @@
-import 'package:chelsea_players/models/vocation.dart';
+import 'package:game_characters/models/vocation.dart';
 
 class Skill {
   // Properties
