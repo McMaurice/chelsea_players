@@ -33,8 +33,6 @@ class Character with Stats {
     skills.add(skill);
   }
 
-  //TODO: Try add multiple skills
-
   // Converts Character to Map
   Map<String, dynamic> toFirestore() {
     return {
@@ -73,7 +71,7 @@ class Character with Stats {
     }
 
     //set isFav
-    if (data['isFave'] == true) {
+    if (data['isFav'] == true) {
       character.toggleIsFav();
     }
 

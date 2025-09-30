@@ -10,9 +10,9 @@ mixin Stats {
   int get points => _points;
 
   Map<String, int> get statsAsMap => {
-    'health': _health,
     'attack': _attack,
     'defense': _defense,
+    'health': _health,
     'skill': _skill,
   };
 
@@ -63,7 +63,7 @@ mixin Stats {
   }
 
   void setStats({required int point, required Map<String, dynamic> stats}) {
-    _points = points;
+    _points = point;
 
     _health = stats['health'];
     _attack = stats['attack'];

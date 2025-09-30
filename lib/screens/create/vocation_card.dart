@@ -34,7 +34,7 @@ class VocationCard extends StatelessWidget {
                 width: 80,
                 colorBlendMode: BlendMode.color,
                 color: !selected
-                    ? Colors.black.withAlpha((1.5 * 300).toInt())
+                    ? Colors.black.withAlpha((0.5 * 300).toInt())
                     : Colors.transparent,
               ),
               const SizedBox(width: 10),
