@@ -32,12 +32,14 @@ class _HomeState extends State<Home> {
         child: Column(
           children: [
             Expanded(
+              // Wrap the section you want to use the data with a Cosummer passing the Proverder store(step 4)
               child: Consumer<CharacterStore>(
                 builder: (context, value, child) {
                   return ListView.builder(
                     itemCount: value.characters.length,
                     itemBuilder: (_, player) {
                       return Dismissible(
+                        // assess the value of the model by referencing through the valuse passes in from the consumer
                         key: ValueKey(value.characters[player].id),
                         onDismissed: (direction) {
                           Provider.of<CharacterStore>(

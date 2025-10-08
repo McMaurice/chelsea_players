@@ -2,13 +2,15 @@ import 'package:game_characters/models/character.dart';
 import 'package:game_characters/services/firestore_services.dart';
 import 'package:flutter/material.dart';
 
+// Set up a Provider class extending to ChangeNotifier (step 2)
 class CharacterStore extends ChangeNotifier {
+  // In the same class, link the provider to your Model in a _private store
   final List<Character> _characters = [];
 
-  // Getter
+  // Setup a getter to access the private store
   get characters => _characters;
 
-  // add new character
+  // create all functions that affects the data and call NotifyListeners in it to trigger a rer-run
   void addCharacter(Character character) {
     FirestoreServices.addCharacter(character);
 

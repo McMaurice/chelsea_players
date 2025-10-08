@@ -22,7 +22,7 @@ class CreateScreen extends StatefulWidget {
 class _CreateScreenState extends State<CreateScreen> {
   final _nameController = TextEditingController();
   final _sloganController = TextEditingController();
-  
+
   // Handling selections
   Vocation selectedVocation = Vocation.junkie;
 
@@ -88,7 +88,7 @@ class _CreateScreenState extends State<CreateScreen> {
       );
       return;
     }
-
+    // writing the data by calling the function through Provider from the provider store, with liten False
     Provider.of<CharacterStore>(context, listen: false).addCharacter(
       Character(
         name: _nameController.text.trim(),

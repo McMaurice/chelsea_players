@@ -13,7 +13,9 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   runApp(
+     // Wrap the App with the Provider (step 3)
     ChangeNotifierProvider(
+     // Create a function to reference the Proverder Store in a context
       create: (context) => CharacterStore(),
       child: MaterialApp(theme: primaryTheme, home: const Home()),
     ),

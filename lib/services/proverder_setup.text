@@ -1,0 +1,27 @@
+How to use a provider. (if you find this, you are digging to dip hehe)
+
+1. Add the prover package
+   $ flutter pub add provider
+
+2. Set up the prover in a class
+   Set up a Provider class extending to ChangeNotifier
+   In the same class, link the provider to your Model in a _private store
+   In the same class Setup a getter to access the private store
+   In this class create all functions that affects the data and call NotifyListeners in it to trigger a rer-run
+
+3. Use the provider to consum the data (Reading data)
+   In the main.dart file wrap the app with a ChangeNotifierProvider
+   In the main.dart file Create a function to reference the Proverder Store in a context
+
+4  To use the data its providing in any widget (e.g the Home.dart file). => (Reading data)
+   Wrap the section you want to use the data with a Cosummer passing the Proverder store
+   Assess the value of the model by referencing through the valuse passes in from the consumer
+
+5  Updating the data through the provider (e.g create.dart file)=> (Writing data)
+   In a stf widget, befor the buld widget in the function that will call the change change function in the provider  - class, writing the data by calling the function through Provider from the provider store, with liten False
+
+
+
+
+
+   
